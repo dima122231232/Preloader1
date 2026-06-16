@@ -1,0 +1,114 @@
+.preloader{
+    position: fixed;
+    z-index:999;
+    top: 0;
+    width: 100%;
+    height:100svh;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    will-change: clip-path;
+    overflow: hidden;
+}
+
+.preloader-images{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100svh;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    will-change: clip-path;
+    overflow: hidden;
+    z-index:-1;
+}
+.preloader-images .img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity:0;
+    will-change: clip-path, opacity, filter, transform;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.preloader-images .img:first-child{
+    opacity:1;
+    filter: blur(10px);
+    inset: 0;
+    overflow: hidden;
+    transform: scale(1.1);
+}
+.preloader-images .img:nth-child(1) { z-index: 6; }
+.preloader-images .img:nth-child(2) { z-index: 5; }
+.preloader-images .img:nth-child(3) { z-index: 4; }
+.preloader-images .img:nth-child(4) { z-index: 3; }
+.preloader-images .img:nth-child(5) { z-index: 2; }
+.preloader-images .img:nth-child(6) { z-index: 1; }
+
+.preloader-images .img img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform;
+}
+
+.preloader-header{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-.7rem);
+    font-weight:400;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    will-change: clip-path;
+}
+.preloader-line{
+    display: flex;
+    position: relative;
+    gap:8px;
+    width: max-content;
+}
+.preloader-line p{
+    height:1rem;
+    flex: 0 0 auto;
+    width: fit-content;
+    
+}
+.preloader__main-text{
+    color: var(--color-light);
+    opacity:0;
+    mix-blend-mode: exclusion;
+    font-weight:300;
+    padding-left:4px;
+    
+}
+.preloader-messages{
+    height:1rem;
+    /* overflow: hidden; */
+    flex: 0 0 auto;
+
+}
+.preloader-messages p{
+    transform: translateY(-4rem);
+    white-space: nowrap;
+    display: block;
+    padding-right:4px;
+}
+.preloader__line-bg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 240, 129, 1);
+    clip-path: polygon(6rem 0%, 6rem 0%, 6rem 100%, 6rem 100%);
+    will-change: clip-path;
+    z-index:-2;
+}
+.preloader__main-text div{opacity: 0;}
+.logo{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    will-change: clip-path , transform;
+}
+.logo svg path {
+  fill: #fff;
+}
