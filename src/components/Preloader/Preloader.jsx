@@ -50,8 +50,8 @@ const Preloader = () => {
                 duration:.6,delay:.2
             });
 
-            // const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
-            // const offset = 6 * rem;
+
+            const offset = window.innerHeight * 0.3;
             const messages = gsap.utils.toArray(".preloader-messages p");
             const widths = Array.from(messages).map((el) =>
                 el.getBoundingClientRect().width
@@ -132,7 +132,7 @@ const Preloader = () => {
                 delay:.6
             })
             .to(".logo svg",{
-                y: "-40vh",
+                y: -offset,
                 duration:1.2,
                 ease:"open"
 
