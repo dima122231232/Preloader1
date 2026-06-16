@@ -74,6 +74,7 @@ const Preloader = () => {
                 duration:.6,
                 ease:"hop"
             })
+            .to(".preloader-messages",{duration:.4,opacity:1},"-=.4")
             .to({}, { duration: .6 });
 
             const images = gsap.utils.toArray(".preloader-images .img");
@@ -83,8 +84,8 @@ const Preloader = () => {
                 "rgba(188, 255, 242, 1)",
                 "rgba(255, 240, 129, 1)"
             ];
-            for(let i = messages.length; i > 0; i--){
-                tl.to(".preloader-messages p",{y:`-${i-1}rem`,ease:"open",duration:1})
+            for(let i = messages.length; i > 1; i--){
+                tl.to(".preloader-messages p",{y:`-${i-2}rem`,ease:"open",duration:1})
                 .to(images[messages.length - i], {
                     // clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
                     opacity:0,
@@ -94,7 +95,7 @@ const Preloader = () => {
                     ease:"open"
                 },"<")
                 .to(".preloader__line-bg",{
-                    clipPath: `polygon(${Mainwidth-4}px 0%, ${widths[i-1] + Mainwidth}px 0%, ${widths[i-1]+ Mainwidth}px 100%, ${Mainwidth-4}px 100%)`,
+                    clipPath: `polygon(${Mainwidth-4}px 0%, ${widths[i-2] + Mainwidth}px 0%, ${widths[i-2]+ Mainwidth}px 100%, ${Mainwidth-4}px 100%)`,
                 },"<")
                 .to(".preloader__line-bg",{
                     backgroundColor:colors[i - 2],
@@ -112,7 +113,7 @@ const Preloader = () => {
                 duration:.6,
                 ease:"open"
             })
-            .to(images[4],{
+            .to(images[3],{
                 opacity:0,
                 scale:1.1,
                 filter:"blur(50px)",
@@ -125,7 +126,7 @@ const Preloader = () => {
                 ease:"open"
 
             },"-=.5")
-            .to(images[5],{
+            .to(images[4],{
                 clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
                 duration:1,
                 ease:"open",
@@ -158,7 +159,7 @@ const Preloader = () => {
                 <div className="img"><img src="/preloader/2.jpg" alt="preloader-images" /></div>
                 <div className="img"><img src="/preloader/3.jpg" alt="preloader-images" /></div>
                 <div className="img"><img src="/preloader/4.jpg" alt="preloader-images" /></div>
-                <div className="img"><img src="/preloader/5.jpg" alt="preloader-images" /></div>
+                {/* <div className="img"><img src="/preloader/5.jpg" alt="preloader-images" /></div> */}
                 <div className="img"><img src="/preloader/6.png" alt="preloader-images" /></div>
             </div>
 

@@ -85,10 +85,11 @@
     height:1rem;
     overflow: hidden;
     flex: 0 0 auto;
+    opacity: 0;
 
 }
 .preloader-messages p{
-    transform: translateY(-4rem);
+    transform: translateY(-3rem);
     white-space: nowrap;
     display: block;
     padding-right:4px;
