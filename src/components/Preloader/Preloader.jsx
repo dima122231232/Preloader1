@@ -132,7 +132,7 @@ const Preloader = () => {
                 delay:.6
             })
             .to(".logo svg",{
-                y: -offset,
+                y: "-40vh",
                 duration:1.2,
                 ease:"open"
 

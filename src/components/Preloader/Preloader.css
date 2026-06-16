@@ -64,6 +64,8 @@
     position: relative;
     gap:8px;
     width: max-content;
+    padding:4px 0;
+    align-items: center;
 }
 .preloader-line p{
     height:1rem;
@@ -81,7 +83,7 @@
 }
 .preloader-messages{
     height:1rem;
-    /* overflow: hidden; */
+    overflow: hidden;
     flex: 0 0 auto;
 
 }
@@ -99,6 +101,7 @@
     clip-path: polygon(6rem 0%, 6rem 0%, 6rem 100%, 6rem 100%);
     will-change: clip-path;
     z-index:-2;
+
 }
 .preloader__main-text div{opacity: 0;}
 .logo{
