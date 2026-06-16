@@ -44,6 +44,7 @@ const Preloader = () => {
             });
 
             gsap.set(".preloader__main-text , .preloader-images .img",{opacity:1})
+            
             gsap.to(".preloader-images .img:first-child", {
                 filter: "blur(0px)",
                 duration:.6,delay:.2
@@ -59,7 +60,7 @@ const Preloader = () => {
             
             
             gsap.set(".preloader__line-bg",{clipPath: `polygon(${Mainwidth-4}px 0%, ${Mainwidth-4}px 0%, ${Mainwidth-4}px 100%, ${Mainwidth-4}px 100%)`});
-            const tl = gsap.timeline({ delay: .25 });
+            const tl = gsap.timeline({ delay: .5 });
 
             tl.to(split.chars, {
                 opacity: 1,
@@ -118,7 +119,7 @@ const Preloader = () => {
                 duration:.6,
                 ease:"open"
             },"<")
-            .to(".logo",{
+            .to(".logo svg",{
                 clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
                 duration:.6,
                 ease:"open"
@@ -130,8 +131,8 @@ const Preloader = () => {
                 ease:"open",
                 delay:.6
             })
-            .to(".logo",{
-                top:"10%",
+            .to(".logo svg",{
+                y: "-40svh",
                 duration:1.2,
                 ease:"open"
 
