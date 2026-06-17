@@ -51,7 +51,6 @@ const Preloader = () => {
             });
 
 
-            const offset = window.innerHeight * 0.3;
             const messages = gsap.utils.toArray(".preloader-messages p");
             const widths = Array.from(messages).map((el) =>
                 el.getBoundingClientRect().width
@@ -74,8 +73,8 @@ const Preloader = () => {
                 duration:.6,
                 ease:"hop"
             })
-            .to(".preloader-messages",{duration:.4,opacity:1},"-=.4")
-            .to({}, { duration: .6 });
+            .to(".preloader-messages",{duration:.4,opacity:1},"-=.2")
+            .to({}, { duration: .4 });
 
             const images = gsap.utils.toArray(".preloader-images .img");
             const colors = [
@@ -91,7 +90,7 @@ const Preloader = () => {
                     opacity:0,
                     scale:1.1,
                     filter:"blur(50px)",
-                    duration: .6,
+                    duration: 1.2,
                     ease:"open"
                 },"<")
                 .to(".preloader__line-bg",{
@@ -101,7 +100,7 @@ const Preloader = () => {
                     backgroundColor:colors[i - 2],
                     duration:.2
                 },"<")
-                .to({}, { duration: .4 });
+                .to({}, { duration: .2 });
             }
             tl.to(".preloader__line-bg",{
                 clipPath: `polygon(0rem 0%, ${widths[0] + Mainwidth}px 0%, ${widths[0]+ Mainwidth}px 100%, 0rem 100%)`,
@@ -117,20 +116,20 @@ const Preloader = () => {
                 opacity:0,
                 scale:1.1,
                 filter:"blur(50px)",
-                duration:.6,
+                duration:1.2,
                 ease:"open"
             },"<")
             .to(".logo svg",{
                 clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-                duration:.6,
+                duration:1,
                 ease:"open"
 
-            },"-=.5")
+            },"-=1.1")
             .to(images[4],{
                 clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-                duration:1,
+                duration:1.2,
                 ease:"open",
-                delay:.6
+                delay:.2
             })
             .to(".logo svg",{
                 y: "-40vh",
@@ -170,7 +169,7 @@ const Preloader = () => {
                         <p> our operating system</p>
                         <p> radical collaboration</p>
                         <p> future of healthcare</p>
-                        <p> scientific breakthrough</p>
+                        <p> scientific advance</p>
                     </div>
                     <div className="preloader__line-bg"></div>
                 </div>
