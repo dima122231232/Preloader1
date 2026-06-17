@@ -100,7 +100,7 @@ const Preloader = () => {
                     backgroundColor:colors[i - 2],
                     duration:.2
                 },"<")
-                .to({}, { duration: .2 });
+                .to({}, { duration: .4 });
             }
             tl.to(".preloader__line-bg",{
                 clipPath: `polygon(0rem 0%, ${widths[0] + Mainwidth}px 0%, ${widths[0]+ Mainwidth}px 100%, 0rem 100%)`,
@@ -121,13 +121,13 @@ const Preloader = () => {
             },"<")
             .to(".logo svg",{
                 clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-                duration:1,
+                duration:.8,
                 ease:"open"
 
             },"-=1.1")
             .to(images[4],{
                 clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-                duration:1.2,
+                duration:.8,
                 ease:"open",
                 delay:.2
             })
