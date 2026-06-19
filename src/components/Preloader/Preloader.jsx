@@ -74,7 +74,7 @@ const Preloader = () => {
                 ease:"hop"
             })
             .to(".preloader-messages",{duration:.4,opacity:1},"-=.2")
-            .to({}, { duration: .4 });
+            .to({}, { duration: .3 });
 
             const images = gsap.utils.toArray(".preloader-images .img");
             const colors = [
@@ -84,13 +84,13 @@ const Preloader = () => {
                 "rgba(255, 240, 129, 1)"
             ];
             for(let i = messages.length; i > 1; i--){
-                tl.to(".preloader-messages p",{y:`-${i-2}rem`,ease:"open",duration:1})
+                tl.to(".preloader-messages p",{y:`-${i-2}rem`,ease:"open",duration:.5})
                 .to(images[messages.length - i], {
                     // clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
                     opacity:0,
                     scale:1.1,
                     filter:"blur(50px)",
-                    duration: 1.2,
+                    duration: .5,
                     ease:"open"
                 },"<")
                 .to(".preloader__line-bg",{
@@ -104,9 +104,9 @@ const Preloader = () => {
             }
             tl.to(".preloader__line-bg",{
                 clipPath: `polygon(0rem 0%, ${widths[0] + Mainwidth}px 0%, ${widths[0]+ Mainwidth}px 100%, 0rem 100%)`,
-                duration:.6,
+                duration:.4,
                 ease:"open"
-            },"-=.6")
+            },"-=.4")
             .to(".preloader-header",{
                 clipPath:"polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
                 duration:.6,
@@ -116,18 +116,18 @@ const Preloader = () => {
                 opacity:0,
                 scale:1.1,
                 filter:"blur(50px)",
-                duration:1.2,
+                duration:.7,
                 ease:"open"
             },"<")
             .to(".logo svg",{
                 clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-                duration:.8,
+                duration:.6,
                 ease:"open"
 
-            },"-=1.1")
+            },"-=.6")
             .to(images[4],{
                 clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-                duration:.8,
+                duration:1.2,
                 ease:"open",
                 delay:.2
             })
